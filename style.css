@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: black;
+}
+
+.wrapper{
+    height: 220px;
+    width: 360px;
+    position: relative;
+    background: linear-gradient(120deg, rgb(250, 250, 155) 13%, rgb(120, 224, 120) 36%, rgb(108, 102, 233) 63%, rgb(230, 103, 103) 99%);
+    border-radius: 10px;
+    cursor: pointer;
+    animation: animate 1.5s linear infinite;
+}
+
+.wrapper .display,
+.wrapper span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper .display {
+    z-index: 999;
+    height: 205px;
+    width: 345px;
+    background: rgb(20, 19, 19);
+    border-radius: 6px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.89);
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    animation: animate 1.5s linear infinite;
+}
+
+.display #time{
+    color: inherit;
+    line-height:85px;
+}
+
+.display #day{
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.display #week_day{
+    position: relative;
+    left: 10px;
+    letter-spacing: 20px;
+    font-size: 18px;
+}
+
+@keyframes animate {
+    100%{
+        filter:hue-rotate(360deg);
+    }
+}
+
+.wrapper span{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.wrapper span:first-child{
+    filter: blur(7px);
+}
+
+.wrapper span:last-child{
+    filter: blur(20px);
+}
